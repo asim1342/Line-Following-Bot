@@ -18,6 +18,25 @@ const int nearRight   = A5;
 const int midRight    = A6;
 const int farRight    = A7;
 
+//inch_forward_movement
+long startTime,stopTime;
+long myDesiredTime;
+void setup()
+{
+//intialized zero
+startTime=0;
+stopTime=0;
+myDesiredTime=2000; // (2 seconds) how much time robot would move
+}
+void loop()
+{
+if(stopTime-startTime<=myDesiredTime) 
+{
+ runMotors();
+stopTime=millis();
+}
+}
+
 // Movement
 void moveForward()
 {
